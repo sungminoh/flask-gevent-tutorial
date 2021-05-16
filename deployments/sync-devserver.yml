@@ -1,14 +1,17 @@
 version: "3.7"
 services:
-  flask_app:
+  app:
     init: true
     build: 
-      context: ./flask_app
-      dockerfile: Dockerfile-gevent-gunicorn
+      context: ../flask_app
+      dockerfile: Dockerfile-devserver
+    container_name:
+      app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000
-      - WORKERS=1
+      - THREADS=without
+      - NUM_REQUESTS=10
     ports:
       - "127.0.0.1:3000:3000"
     depends_on:
@@ -16,9 +19,10 @@ services:
 
   slow_api:
     init: true
-    build: ./slow_api
+    build: ../slow_api
+    container_name:
+      slow_api
     environment: 
       - PORT=4000
     expose:
       - "4000"
-

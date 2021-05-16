@@ -1,0 +1,7 @@
+FROM python:3.8
+
+RUN pip install 'fastapi[all]' 'uvicorn' 'aiohttp'
+
+COPY app.py /app.py
+
+CMD uvicorn --host 0.0.0.0 --port ${PORT_APP} --workers ${WORKERS} 'app:app'

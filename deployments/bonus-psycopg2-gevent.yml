@@ -1,9 +1,9 @@
 version: "3.7"
 services:
-  flask_app:
+  app:
     init: true
     build: 
-      context: ./psycopg2
+      context: ../psycopg2
       dockerfile: Dockerfile
     environment: 
       - PORT_APP=3000
@@ -17,10 +17,10 @@ services:
       - slow_api
       - postgres
 
-  flask_app_2:
+  app2:
     init: true
     build: 
-      context: ./psycopg2
+      context: ../psycopg2
       dockerfile: Dockerfile
     environment: 
       - PORT_APP=3001
@@ -36,7 +36,7 @@ services:
 
   slow_api:
     init: true
-    build: ./slow_api
+    build: ../slow_api
     environment: 
       - PORT=4000
     expose:
