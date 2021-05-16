@@ -1,14 +1,15 @@
 version: "3.7"
 services:
-  flask_app_gunicorn:
+  app:
     init: true
     build: 
       context: ../flask_app
       dockerfile: Dockerfile-gunicorn
+    container_name: app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000
-      - WORKERS=1
+      - WORKERS=4
       - THREADS=50
       - NUM_REQUESTS=10
     ports:

@@ -5,10 +5,11 @@ services:
     build: 
       context: ../flask_app
       dockerfile: Dockerfile-gevent-uwsgi
+    container_name: app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000
-      - WORKERS=1
+      - WORKERS=4
       - ASYNC_CORES=2000
       - PROTOCOL=http
       - NUM_REQUESTS=10

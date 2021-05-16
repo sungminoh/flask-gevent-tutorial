@@ -5,6 +5,7 @@ services:
     build: 
       context: ../psycopg2
       dockerfile: Dockerfile
+    container_name: app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000
@@ -22,6 +23,7 @@ services:
     build: 
       context: ../psycopg2
       dockerfile: Dockerfile
+    container_name: app2
     environment: 
       - PORT_APP=3001
       - PORT_API=4000

@@ -5,6 +5,7 @@ services:
     build: 
       context: ../flask_app
       dockerfile: Dockerfile-devserver
+    container_name: app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000

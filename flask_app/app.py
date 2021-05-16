@@ -18,5 +18,5 @@ def index():
     for _ in range(n):
         reqs.append(grequests.get(f'{api_url}?delay={delay}'))
     resps = [x.text for x in grequests.map(reqs)]
-    return f'{cnt} {resps}'
+    return f'{cnt} {resps}', 200
 

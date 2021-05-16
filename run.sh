@@ -12,12 +12,15 @@ wait_docker() {
   do
     sleep 1;
   done
+  sleep 1;
 }
 
 benchmark() {
   # Test single-threaded deployment
   echo "${CYON}############ ${1} deploayment ############${NC}"
-  ab -r -n 600 -c 200 http://127.0.0.1:3000/?delay=1
+  ab -r -l -n 600 -c 200 http://127.0.0.1:3000/?delay=1
+  curl http://127.0.0.1:3000/?delay=1
+  curl http://127.0.0.1:3000/?delay=1
   curl http://127.0.0.1:3000/?delay=1
 }
 

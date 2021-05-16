@@ -9,17 +9,19 @@ services:
     depends_on:
       - flask_app
 
-  flask_app:
+  app:
     init: true
     build: 
       context: ./flask_app
       dockerfile: Dockerfile-gevent-uwsgi
+    container_name: app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000
       - WORKERS=1
       - ASYNC_CORES=2000
       - PROTOCOL=uwsgi
+      - NUM_REQUESTS=10
     expose:
       - "3000"
     depends_on:
