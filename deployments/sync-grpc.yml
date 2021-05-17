@@ -3,13 +3,12 @@ services:
   app:
     init: true
     build: 
-      context: ../fastapi_app
-      dockerfile: Dockerfile-fastapi-gunicorn
+      context: ../grpc_app
+      dockerfile: Dockerfile-grpc
     container_name: app
     environment: 
       - PORT_APP=3000
       - PORT_API=4000
-      - WORKERS=1
       - NUM_REQUESTS=10
     ports:
       - "127.0.0.1:3000:3000"

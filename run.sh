@@ -19,9 +19,9 @@ benchmark() {
   # Test single-threaded deployment
   echo "${CYON}############ ${1} deploayment ############${NC}"
   ab -r -l -n 600 -c 200 http://127.0.0.1:3000/?delay=1
-  curl http://127.0.0.1:3000/?delay=1
-  curl http://127.0.0.1:3000/?delay=1
-  curl http://127.0.0.1:3000/?delay=1
+  curl -s http://127.0.0.1:3000/?delay=1
+  curl -s http://127.0.0.1:3000/?delay=1
+  curl -s http://127.0.0.1:3000/?delay=1
 }
 
 down() {

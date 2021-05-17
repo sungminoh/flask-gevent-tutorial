@@ -1,0 +1,9 @@
+FROM python:3.8
+
+RUN pip install 'grpcio' 'grpcio-tools' 'protobuf' 'grpcio-reflection' 'grequests'
+
+COPY service.proto /service.proto
+RUN python -m grpc_tools.protoc -I ./ --python_out ./ --grpc_python_out ./ service.proto
+
+COPY app.py /app.py
+CMD python app.py
