@@ -1,4 +1,4 @@
-# Python server deployment benchmark
+# IO bound
 
 Each request calls `slow_api` 10 times. `slow_api` takes 1 second.
 
