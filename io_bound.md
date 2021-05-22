@@ -437,8 +437,6 @@ Time per request:     1507.2543168067932 [ms] (mean)
 100%   2598.2658863067627
 ```
 
-The next call returns `602` which is expected.
-
 #### 4 processes
 
 ```sh

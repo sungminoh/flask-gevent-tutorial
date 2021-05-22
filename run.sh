@@ -32,19 +32,19 @@ benchmark() {
     python benchmark.py -n $NUM_REQUESTS -c $CONCURRENCY grpc $2
   else
     python benchmark.py -n $NUM_REQUESTS -c $CONCURRENCY http $2
-    if [[ "$2" == "io" ]]; then
-      url=http://127.0.0.1:3000/io_bound?delay=1
-      ab -r -l -n $NUM_REQUESTS -c $CONCURRENCY $url
-      curl -s $url
-      curl -s $url
-      curl -s $url
-    elif [[ "$2" == "cpu" ]]; then
-      url=http://127.0.0.1:3000/cpu_bound?num=1000
-      ab -r -l -n $NUM_REQUESTS -c $CONCURRENCY $url
-      curl -s $url
-      curl -s $url
-      curl -s $url
-    fi
+    #if [[ "$2" == "io" ]]; then
+      #url=http://127.0.0.1:3000/io_bound?delay=1
+      #ab -r -l -n $NUM_REQUESTS -c $CONCURRENCY $url
+      #curl -s $url
+      #curl -s $url
+      #curl -s $url
+    #elif [[ "$2" == "cpu" ]]; then
+      #url=http://127.0.0.1:3000/cpu_bound?num=1000
+      #ab -r -l -n $NUM_REQUESTS -c $CONCURRENCY $url
+      #curl -s $url
+      #curl -s $url
+      #curl -s $url
+    #fi
   fi
 }
 
