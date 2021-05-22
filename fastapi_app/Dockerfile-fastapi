@@ -1,6 +1,6 @@
 FROM python:3.8
 
-RUN pip install 'fastapi[all]' 'uvicorn' 'aiohttp'
+RUN pip install 'fastapi[all]' 'uvicorn' 'aiohttp' 'numpy'
 
 COPY app.py /app.py
 

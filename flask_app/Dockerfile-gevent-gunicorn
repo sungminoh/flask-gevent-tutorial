@@ -1,6 +1,6 @@
 FROM python:3.8
 
-RUN pip install Flask grequests gunicorn gevent
+RUN pip install Flask grequests gunicorn gevent numpy
 
 COPY app.py /app.py
 COPY patched.py /patched.py

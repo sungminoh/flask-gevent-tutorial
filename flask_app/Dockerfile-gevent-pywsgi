@@ -1,6 +1,6 @@
 FROM python:3.8
 
-RUN pip install Flask grequests gevent
+RUN pip install Flask grequests gevent numpy
 
 COPY app.py /app.py
 COPY pywsgi.py /pywsgi.py

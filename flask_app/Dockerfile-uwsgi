@@ -1,6 +1,6 @@
 FROM python:3.8
 
-RUN pip install Flask grequests uwsgi
+RUN pip install Flask grequests uwsgi numpy
 
 COPY app.py /app.py
 

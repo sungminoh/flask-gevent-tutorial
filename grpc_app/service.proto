@@ -1,12 +1,13 @@
 syntax = "proto3";
 
 service MyApp {
+  rpc index (MyAppRequest) returns (MyAppResponse) {}
   rpc io_bound (MyAppRequest) returns (MyAppResponse) {}
   rpc cpu_bound (MyAppRequest) returns (MyAppResponse) {}
 }
 
 message MyAppRequest {
-  int32 delay = 1;
+  int32 num = 1;
 }
 
 message MyAppResponse {
