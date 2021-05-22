@@ -2,11 +2,11 @@ version: "3.7"
 services:
   app:
     init: true
-    build: 
+    build:
       context: ../flask_app
       dockerfile: Dockerfile-gunicorn
     container_name: app
-    environment: 
+    environment:
       - PORT_APP=3000
       - PORT_API=4000
       - WORKERS=4
@@ -20,7 +20,7 @@ services:
   slow_api:
     init: true
     build: ../slow_api
-    environment: 
+    environment:
       - PORT=4000
     expose:
       - "4000"
